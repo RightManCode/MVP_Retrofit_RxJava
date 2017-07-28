@@ -8,6 +8,6 @@ import android.util.Log;
 
 public class TestClass {
     public TestClass() {
-        Log.e("cww", "haha");
+        Log.e("cww", "hahaggggggg");
     }
 }
