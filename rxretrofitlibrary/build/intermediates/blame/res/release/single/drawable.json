@@ -4,12 +4,12 @@
         "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\release\\drawable\\notification_icon_background.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable\\notification_icon_background.xml"
-    },
-    {
         "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_voice_search_api_material.xml",
         "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\release\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable\\notification_icon_background.xml"
     },
     {
         "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",

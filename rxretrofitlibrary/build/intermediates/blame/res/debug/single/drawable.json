@@ -12,12 +12,12 @@
         "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
         "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",

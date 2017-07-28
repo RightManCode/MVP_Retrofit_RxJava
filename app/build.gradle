@@ -21,24 +21,6 @@ android {
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
     }
-
-    productFlavors {
-        kuan {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "kuan"]
-        }
-        xiaomi {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
-        }
-        qh360 {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "qh360"]
-        }
-        baidu {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
-        }
-        wandoujia {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
-        }
-    }
 }
 
 

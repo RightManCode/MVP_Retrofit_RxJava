@@ -12,12 +12,12 @@
         "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png",
         "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
         "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png",
