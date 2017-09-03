@@ -35,8 +35,8 @@ public abstract class BaseApi<T> implements Func1<T, String> {
      */
     /* 基础url */
     // private String baseUrl = "http://fjjr.tunnel.qydev.com/fjjrgs/";
-//    private String baseUrl = "http://192.168.59.27:8080/fjjrgs/";
-//    private String baseUrl = "http://120.35.30.151:8085/fjjrgs/";
+    // private String baseUrl = "http://192.168.59.27:8080/fjjrgs/";
+    // private String baseUrl = "http://120.35.30.151:8085/fjjrgs/";
 
     private String baseUrl = "http://gc.ditu.aliyun.com/";
 
