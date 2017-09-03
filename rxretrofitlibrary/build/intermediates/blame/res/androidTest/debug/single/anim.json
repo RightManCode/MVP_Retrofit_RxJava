@@ -1,42 +1,42 @@
 [
     {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_in.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_fade_in.xml"
-    },
-    {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_slide_out_top.xml"
-    },
-    {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
         "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\803e6c6fca152f30070f8aca4818dbc1743787f7\\output\\res\\anim\\abc_slide_in_top.xml"
     }
 ]

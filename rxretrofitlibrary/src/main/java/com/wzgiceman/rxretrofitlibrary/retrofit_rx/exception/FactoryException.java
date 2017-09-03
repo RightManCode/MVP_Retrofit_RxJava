@@ -43,7 +43,7 @@ public class FactoryException {
      * @author Lester Huang
      * @created 2017 /02/23 15:24:23 Analysis excetpion api exception.
      */
-    public static ApiException analysisExcetpion(Throwable e) {
+    public static ApiException analysisException(Throwable e) {
         ApiException apiException = new ApiException(e);
         if (e instanceof HttpException) {
             /* 网络异常 */

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+        "outputFile": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -4001,7 +4001,7 @@
                     "endOffset": 34149
                 },
                 "from": {
-                    "file": "E:\\MVP_Retrofit_RxJava\\rxretrofitlibrary\\src\\main\\res\\values\\strings.xml",
+                    "file": "E:\\My_MVP_Retrofit_RxJava\\rxretrofitlibrary\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,

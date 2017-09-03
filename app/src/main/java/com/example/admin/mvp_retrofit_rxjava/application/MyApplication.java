@@ -9,7 +9,7 @@ import com.alipay.euler.andfix.patch.PatchManager;
 
 import java.io.IOException;
 
-import static android.support.v7.widget.StaggeredGridLayoutManager.TAG;
+
 
 /**
  * Created by admin on 2017/7/26.

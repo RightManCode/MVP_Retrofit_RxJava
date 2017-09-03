@@ -5,7 +5,7 @@ import com.wzgiceman.rxretrofitlibrary.retrofit_rx.RxRetrofitApp;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.CodeException;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.HttpTimeException;
-import com.wzgiceman.rxretrofitlibrary.retrofit_rx.http.cookie.CookieResulte;
+import com.wzgiceman.rxretrofitlibrary.retrofit_rx.http.cookie.CookieResult;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.listener.HttpOnNextListener;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.utils.AppUtil;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.utils.CookieDbUtil;
@@ -17,13 +17,11 @@ import rx.Subscriber;
 import rx.Subscription;
 
 /**
- *
  * 统一处理缓存-数据持久化 异常回调
- * 
+ *
+ * @param <T> the type parameter
  * @author Lester Huang
  * @created 2017 /02/23 15:43:58
- * @param <T>
- *            the type parameter
  */
 public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription {
     /**
@@ -51,7 +49,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
 
     /**
      * 订阅开始时调用 显示ProgressDialog
-     * 
+     *
      * @author Lester Huang
      * @created 2017 /02/23 15:43:58 On start.
      */
@@ -60,12 +58,12 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
         /*缓存并且有网*/
         if (api.isCache() && AppUtil.isNetworkAvailable(RxRetrofitApp.getApplication())) {
              /*获取缓存数据*/
-            CookieResulte cookieResulte = CookieDbUtil.getInstance().queryCookieBy(api.getUrl());
-            if (cookieResulte != null) {
-                long time = (System.currentTimeMillis() - cookieResulte.getTime()) / 1000;
+            CookieResult cookieResult = CookieDbUtil.getInstance().queryCookieBy(api.getUrl());
+            if (cookieResult != null) {
+                long time = (System.currentTimeMillis() - cookieResult.getTime()) / 1000;
                 if (time < api.getCookieNetWorkTime()) {
                     if (mSubscriberOnNextListener.get() != null) {
-                        mSubscriberOnNextListener.get().onNext(cookieResulte.getResulte(), api.getMothed());
+                        mSubscriberOnNextListener.get().onNext(cookieResult.getResult(), api.getMethod());
                     }
                     onCompleted();
                     unsubscribe();
@@ -77,7 +75,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
 
     /**
      * 描述 create.
-     * 
+     *
      * @author Lester Huang
      * @created 2017 /02/23 15:43:58 On completed.
      */
@@ -89,10 +87,9 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
     /**
      * 对错误进行统一处理 隐藏ProgressDialog
      *
+     * @param e the e
      * @author Lester Huang
      * @created 2017 /02/23 15:43:58 On error.
-     * @param e
-     *            the e
      */
     @Override
     public void onError(Throwable e) {
@@ -106,7 +103,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
 
     /**
      * 获取cache数据
-     * 
+     *
      * @author Lester Huang
      * @created 2017 /02/23 15:43:58
      */
@@ -125,14 +122,14 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
             @Override
             public void onNext(String s) {
                            /*获取缓存数据*/
-                CookieResulte cookieResulte = CookieDbUtil.getInstance().queryCookieBy(s);
+                CookieResult cookieResulte = CookieDbUtil.getInstance().queryCookieBy(s);
                 if (cookieResulte == null) {
                     throw new HttpTimeException(HttpTimeException.NO_CHACHE_ERROR);
                 }
                 long time = (System.currentTimeMillis() - cookieResulte.getTime()) / 1000;
                 if (time < api.getCookieNoNetWorkTime()) {
                     if (mSubscriberOnNextListener.get() != null) {
-                        mSubscriberOnNextListener.get().onNext(cookieResulte.getResulte(), api.getMothed());
+                        mSubscriberOnNextListener.get().onNext(cookieResulte.getResult(), api.getMethod());
                     }
                 } else {
                     CookieDbUtil.getInstance().deleteCookie(cookieResulte);
@@ -146,10 +143,9 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
     /**
      * 错误统一处理
      *
+     * @param e the e
      * @author Lester Huang
      * @created 2017 /02/23 15:43:58 Error do.
-     * @param e
-     *            the e
      */
     private void errorDo(Throwable e) {
         HttpOnNextListener httpOnNextListener = mSubscriberOnNextListener.get();
@@ -168,34 +164,28 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
     /**
      * 将onNext方法中的返回结果交给Activity或Fragment自己处理
      *
+     * @param t 创建Subscriber时的泛型类型
      * @author Lester Huang
      * @created 2017 /02/23 15:43:58 On next.
-     * @param t
-     *            创建Subscriber时的泛型类型
      */
     @Override
     public void onNext(T t) {
          /*缓存处理*/
         if (api.isCache()) {
-            CookieResulte resulte = CookieDbUtil.getInstance().queryCookieBy(api.getUrl());
+            CookieResult resulte = CookieDbUtil.getInstance().queryCookieBy(api.getUrl());
             long time = System.currentTimeMillis();
             /*保存和更新本地数据*/
             if (resulte == null) {
-                resulte = new CookieResulte(api.getUrl(), t.toString(), time);
+                resulte = new CookieResult(api.getUrl(), t.toString(), time);
                 CookieDbUtil.getInstance().saveCookie(resulte);
             } else {
-                resulte.setResulte(t.toString());
+                resulte.setResult(t.toString());
                 resulte.setTime(time);
                 CookieDbUtil.getInstance().updateCookie(resulte);
             }
         }
         if (mSubscriberOnNextListener.get() != null) {
-            mSubscriberOnNextListener.get().onNext((String) t, api.getMothed());
+            mSubscriberOnNextListener.get().onNext((String) t, api.getMethod());
         }
     }
-
-
-
-
-
 }

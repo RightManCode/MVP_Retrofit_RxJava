@@ -9,34 +9,37 @@ import org.greenrobot.greendao.annotation.Generated;
 
  */
 @Entity
-public class CookieResulte {
+public class CookieResult {
     @Id
     private long id;
     /*url*/
     private String url;
     /*返回结果*/
-    private String resulte;
+    private String result;
     /*时间*/
     private long time;
 
-    public CookieResulte(String url, String resulte, long time) {
+    public CookieResult(String url, String result, long time) {
         this.url = url;
-        this.resulte = resulte;
+        this.result = result;
         this.time = time;
     }
 
 
-    @Generated(hash = 1796425720)
-    public CookieResulte(long id, String url, String resulte, long time) {
+    @Generated(hash = 1914207567)
+    public CookieResult(long id, String url, String result, long time) {
         this.id = id;
         this.url = url;
-        this.resulte = resulte;
+        this.result = result;
         this.time = time;
     }
 
-    @Generated(hash = 2104390000)
-    public CookieResulte() {
+
+    @Generated(hash = 43459054)
+    public CookieResult() {
     }
+
+
     public long getId() {
         return this.id;
     }
@@ -49,16 +52,21 @@ public class CookieResulte {
     public void setUrl(String url) {
         this.url = url;
     }
-    public String getResulte() {
-        return this.resulte;
-    }
-    public void setResulte(String resulte) {
-        this.resulte = resulte;
-    }
+
     public long getTime() {
         return this.time;
     }
     public void setTime(long time) {
         this.time = time;
+    }
+
+
+    public String getResult() {
+        return this.result;
+    }
+
+
+    public void setResult(String result) {
+        this.result = result;
     }
 }

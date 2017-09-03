@@ -47,11 +47,11 @@ public abstract class BaseApi<T> implements Func1<T, String> {
     // private String baseUrl="http://120.35.30.151:8085/fjjrgs/";
     // private String baseUrl="http://www.izaodao.com/Api/";
     /* 方法-如果需要缓存必须设置这个参数；不需要不用設置 */
-    private String mothed;
+    private String method;
     /**
      * The Connection time.
      */
-    /* 超时时间-默认6秒 */
+    /* 超时时间-默认60秒 */
     private int connectionTime = 60;
     /**
      * The Cookie net work time.
@@ -125,8 +125,8 @@ public abstract class BaseApi<T> implements Func1<T, String> {
      * @author Lester Huang
      * @created 2017 /02/23 15:21:43
      */
-    public String getMothed() {
-        return mothed;
+    public String getMethod() {
+        return method;
     }
 
     /**
@@ -154,12 +154,12 @@ public abstract class BaseApi<T> implements Func1<T, String> {
     /**
      * 描述 Sets mothed.
      *
-     * @param mothed the mothed
+     * @param method the method
      * @author Lester Huang
      * @created 2017 /02/23 15:21:43
      */
-    public void setMothed(String mothed) {
-        this.mothed = mothed;
+    public void setMethod(String method) {
+        this.method = method;
     }
 
     /**
@@ -192,7 +192,7 @@ public abstract class BaseApi<T> implements Func1<T, String> {
      * @created 2017 /02/23 15:21:44
      */
     public String getUrl() {
-        return baseUrl + (mothed == null ? "" : mothed);
+        return baseUrl + (method == null ? "" : method);
     }
 
     /**
@@ -271,10 +271,10 @@ public abstract class BaseApi<T> implements Func1<T, String> {
      */
     @Override
     public String call(T httpResult) {
-        MyBaseResultEntity baseResulte = JSONObject.parseObject(httpResult.toString(), MyBaseResultEntity.class);
+        MyBaseResultEntity baseResult = JSONObject.parseObject(httpResult.toString(), MyBaseResultEntity.class);
 //        if (baseResulte.getRet() != 1) {
 //            throw new HttpTimeException(baseResulte.getMsg());
 //        }
-        return baseResulte.getQueryLocation().toString();
+        return baseResult.getQueryLocation().toString();
     }
 }

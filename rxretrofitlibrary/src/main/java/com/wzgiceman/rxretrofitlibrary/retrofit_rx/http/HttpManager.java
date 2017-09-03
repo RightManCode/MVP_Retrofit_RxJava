@@ -94,7 +94,7 @@ public class HttpManager {
     Func1 funcException = new Func1<Throwable, Observable>() {
         @Override
         public Observable call(Throwable throwable) {
-            return Observable.error(FactoryException.analysisExcetpion(throwable));
+            return Observable.error(FactoryException.analysisException(throwable));
         }
     };
 
