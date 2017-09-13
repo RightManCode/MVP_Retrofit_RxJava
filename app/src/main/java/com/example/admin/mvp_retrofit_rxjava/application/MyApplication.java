@@ -28,15 +28,15 @@ public class MyApplication extends Application {
         patchManager.init("1.0");
         patchManager.loadPatch();
 
-        //和后台商量，更新包下载到本地
-        try {
-            // .apatch file path
-            String patchFileString = Environment.getExternalStorageDirectory()
-                    .getAbsolutePath() + APATCH_PATH;
-            patchManager.addPatch(patchFileString);
-            Log.d(TAG, "apatch:" + patchFileString + " added.");
-        } catch (IOException e) {
-            Log.e(TAG, "", e);
-        }
+//        //和后台商量，更新包下载到本地
+//        try {
+//            // .apatch file path
+//            String patchFileString = Environment.getExternalStorageDirectory()
+//                    .getAbsolutePath() + APATCH_PATH;
+//          //  patchManager.addPatch(patchFileString);
+//            Log.d(TAG, "apatch:" + patchFileString + " added.");
+//        } catch (IOException e) {
+//            Log.e(TAG, "", e);
+//        }
     }
 }

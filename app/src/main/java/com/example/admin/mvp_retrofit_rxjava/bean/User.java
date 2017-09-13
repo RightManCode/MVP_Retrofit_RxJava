@@ -10,6 +10,8 @@ public class User {
 
     DefaultInfo info;
 
+    String jsonString;
+
     public String getUserName() {
         return userName;
     }
@@ -32,5 +34,14 @@ public class User {
 
     public void setInfo(DefaultInfo info) {
         this.info = info;
+    }
+
+
+    public String getJsonString() {
+        return jsonString;
+    }
+
+    public void setJsonString(String jsonString) {
+        this.jsonString = jsonString;
     }
 }

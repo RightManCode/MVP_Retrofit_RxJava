@@ -1,11 +1,12 @@
 package com.example.admin.mvp_retrofit_rxjava.mvp.activity;
 
-import android.app.FragmentManager;
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.alibaba.fastjson.JSON;
@@ -15,6 +16,8 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.admin.mvp_retrofit_rxjava.R;
 import com.example.admin.mvp_retrofit_rxjava.api.LoginPostApi;
 import com.example.admin.mvp_retrofit_rxjava.bean.DefaultInfo;
+import com.example.admin.mvp_retrofit_rxjava.bean.DomainChangeBean;
+import com.example.admin.mvp_retrofit_rxjava.bean.JsonString;
 import com.example.admin.mvp_retrofit_rxjava.bean.User;
 import com.example.admin.mvp_retrofit_rxjava.mvp.contract.LoginContract;
 import com.example.admin.mvp_retrofit_rxjava.mvp.fragment.EnjoyFragment;
@@ -23,14 +26,22 @@ import com.example.admin.mvp_retrofit_rxjava.mvp.fragment.MineFragment;
 import com.example.admin.mvp_retrofit_rxjava.mvp.fragment.MoneyFragment;
 import com.example.admin.mvp_retrofit_rxjava.mvp.presenter.LoginPresenterImpl;
 import com.google.gson.Gson;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.AbsCallback;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
 
+import org.greenrobot.greendao.annotation.ToMany;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Response;
 
 public class MainActivity extends RxAppCompatActivity implements LoginContract.LoginView, BottomNavigationBar.OnTabSelectedListener {
 
@@ -63,15 +74,58 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
 
     private int lastSelectedPosition;
 
+    private List<DomainChangeBean> changes = new ArrayList<>();
+
+
+
+    private static Activity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         loginPresenter = new LoginPresenterImpl(this);
+        activity = MainActivity.this;
         initView();
         setDefaultFragment();
-        convertGson();
+        testJsonParams();
+        //convertGson();
+        //testOkGo();
+    }
+
+    private void testJsonParams() {
+        changes.add(new DomainChangeBean("10", "1", "1010", "www.888.com"));
+        changes.add(new DomainChangeBean("20", "0", "1011", "www.aaa.com"));
+        changes.add(new DomainChangeBean("15", "0", "1012", "www.bbb.com"));
+        changes.add(new DomainChangeBean("18", "0", "1013", "www.ccc.com"));
+        changes.add(new DomainChangeBean("22", "0", "1014", "www.ddd.com"));
+        Map<String, Object> paramData = new HashMap<>();
+        paramData.put("changes", changes);
+        Map<String, Object> params = new HashMap<>();
+        params.put("uri", "/updateDomainMapper");
+        params.put("token", "");
+        params.put("paramData", paramData);
+        String s = new Gson().toJson(params);
+        Log.e("cww", "hahah" + s);
+    }
+
+    private void testOkGo() {
+        OkGo.post("http://119.9.107.44:9999/getVersionHost").execute(new AbsCallback<String>() {
+            @Override
+            public void onSuccess(String s, Call call, Response response) {
+
+            }
+
+            @Override
+            public String convertSuccess(Response response) throws Exception {
+                String json = response.body().string();
+                Log.e("cww", "json数据1：" + json);
+                return json;
+            }
+
+
+        });
     }
 
     private void convertGson() {
@@ -82,8 +136,12 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
         info.setOc("mac");
         info.setKey("asdfj;lasd35s4df54as5df4afd1s21");
         user.setInfo(info);
-        String jsonString = JSON.toJSONString(user);
-        Log.e("cww", "user:" + jsonString);
+        JsonString jsonString = new JsonString();
+        jsonString.setA("aaaaaaaaaaaaaaa");
+        jsonString.setB("bbbb");
+        user.setJsonString(JSON.toJSONString(jsonString));
+        String jS = JSON.toJSONString(user);
+        Log.e("cww", "user:" + jS);
         //Map<String, String> defaultInfo = new HashMap<>();
         //defaultInfo.put("userName", "xiaobai");
         //defaultInfo.put("password", "xiaohei");
