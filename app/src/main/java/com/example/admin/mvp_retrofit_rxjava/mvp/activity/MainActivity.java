@@ -1,12 +1,13 @@
 package com.example.admin.mvp_retrofit_rxjava.mvp.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.alibaba.fastjson.JSON;
@@ -30,8 +31,6 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.AbsCallback;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
-
-import org.greenrobot.greendao.annotation.ToMany;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,7 +76,6 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
     private List<DomainChangeBean> changes = new ArrayList<>();
 
 
-
     private static Activity activity;
 
     @Override
@@ -90,6 +88,7 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
         initView();
         setDefaultFragment();
         testJsonParams();
+
         //convertGson();
         //testOkGo();
     }
@@ -239,6 +238,14 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
         startLoginPost();
         new MaterialDialog.Builder(this).title("Welcome boys and girls！").content("It is party time,having a good time!").positiveText("DO WELL IN")
                 .negativeText("GIVE UP").show();
+    }
+
+    public void openUrl(View view) {
+//        Uri uri = Uri.parse("https://www.baidu.com");
+//        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        Intent intent = new Intent("com.wanhaohui.www.html");
+        intent.putExtra("HTML5", "http://www.whh7788.com/api/pages/activity.php?id=0");
+        startActivity(intent);
     }
 
     @Override
