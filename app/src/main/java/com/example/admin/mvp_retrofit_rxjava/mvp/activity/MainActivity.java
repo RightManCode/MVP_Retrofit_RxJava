@@ -3,17 +3,24 @@ package com.example.admin.mvp_retrofit_rxjava.mvp.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.alibaba.fastjson.JSON;
 import com.ashokvarma.bottomnavigation.BadgeItem;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.mvp_retrofit_rxjava.R;
 import com.example.admin.mvp_retrofit_rxjava.api.LoginPostApi;
 import com.example.admin.mvp_retrofit_rxjava.bean.DefaultInfo;
@@ -48,6 +55,8 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
 
     @BindView(R.id.bottom_navigation_bar)
     BottomNavigationBar bottomNavigationBar;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     //用来设置标签的数量
     private BadgeItem mHomeFragmentBadgeItem;
@@ -61,7 +70,7 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
     //用来设置标签的数量
     //  private BadgeItem mMineFragmentBadgeItem;
 
-    private android.support.v4.app.FragmentManager fragmentManager;
+    private FragmentManager fragmentManager;
 
     private HomeFragment mHomeFragment;
 
@@ -75,6 +84,23 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
 
     private List<DomainChangeBean> changes = new ArrayList<>();
 
+    private BaseQuickAdapter<User, BaseViewHolder> testAdapter;
+
+    private List<User> mList = new ArrayList<>();
+
+    private Handler refreshMoreHanlder = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            for (int i = 0; i < 20; i++) {
+                User user = new User();
+                user.setUserName("ahhahaha" + i);
+                user.setPassWord("aadfaa" + i);
+                mList.add(user);
+            }
+            testAdapter.loadMoreComplete();
+        }
+    };
 
     private static Activity activity;
 
@@ -88,9 +114,35 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
         initView();
         setDefaultFragment();
         testJsonParams();
-
+        initRecyclerView();
         //convertGson();
         //testOkGo();
+    }
+
+    private void initRecyclerView() {
+        testAdapter = new BaseQuickAdapter<User, BaseViewHolder>(R.layout.item_list) {
+            @Override
+            protected void convert(BaseViewHolder helper, User item) {
+                helper.setText(R.id.tv_userName, item.getUserName());
+                helper.setText(R.id.tv_passWord, item.getPassWord());
+            }
+        };
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(testAdapter);
+        for (int i = 0; i < 20; i++) {
+            User user = new User();
+            user.setUserName("ahhahaha" + i);
+            user.setPassWord("aadfaa" + i);
+            mList.add(user);
+        }
+        testAdapter.setNewData(mList);
+        testAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                //    Toast.makeText(MainActivity.this, "正在加载更多", Toast.LENGTH_SHORT).show();
+                refreshMoreHanlder.sendEmptyMessageDelayed(0, 3000);
+            }
+        }, recyclerView);
     }
 
     private void testJsonParams() {

@@ -35,9 +35,14 @@
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:singleLine="true"
-        android:text="Hello,Welcome to our eeeeeeeeee!"
+        android:text="　IF you can keep your head when all about you Are losing theirs and blaming it on you; 如果周围的人毫无理性地向你发难，你仍能镇定自若保持冷静； IF you can trust yourself when all men doubt you, But make allowance for their doubting too; 如果众人对你心存猜忌，你仍能自信如常并认为他们的猜忌情有可原； If you can wait and not be tired by waiting, 如果你肯耐心等待不急不躁， Or, being lied about, don't deal in lies, 或遭人诽谤却不以牙还牙， Or, being hated, don't give way to hating, 或遭人憎恨却不以恶报恶； And yet don't look too good, nor talk too wise; 既不装腔作势，亦不气盛趾高； "
         android:textColor="#fff"
         android:textSize="40px" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <FrameLayout
         android:id="@+id/tb"

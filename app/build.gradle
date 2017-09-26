@@ -71,4 +71,8 @@ dependencies {
     //fastjson
     compile 'com.alibaba:fastjson:1.1.62.android'
     compile 'com.lzy.net:okgo:2.1.4'
+
+    //适配器
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+
 }
