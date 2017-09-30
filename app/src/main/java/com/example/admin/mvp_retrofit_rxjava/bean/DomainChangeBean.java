@@ -15,7 +15,6 @@ public class DomainChangeBean {
     private String domainState;
     private String systemCode;
     private String domain;
-
     public DomainChangeBean(String id, String domainState, String systemCode, String domain) {
         this.id = id;
         this.domainState = domainState;

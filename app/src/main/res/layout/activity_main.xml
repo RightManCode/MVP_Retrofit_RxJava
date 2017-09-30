@@ -7,12 +7,26 @@
     tools:context="com.example.admin.mvp_retrofit_rxjava.mvp.activity.MainActivity">
 
     <Button
+        android:id="@+id/btn_signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="signIn"
+        android:text="签到" />
+
+    <Button
         android:id="@+id/btn_getData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="getData"
         android:text="获得后台数据" />
+
+    <CalendarView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff" />
 
     <Button
         android:id="@+id/btn_openUrl"

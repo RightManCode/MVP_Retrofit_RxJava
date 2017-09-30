@@ -3,6 +3,7 @@ package com.example.admin.mvp_retrofit_rxjava.mvp.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,9 +11,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
+import android.view.WindowManager;
+import android.widget.PopupWindow;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.alibaba.fastjson.JSON;
@@ -50,6 +55,7 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 public class MainActivity extends RxAppCompatActivity implements LoginContract.LoginView, BottomNavigationBar.OnTabSelectedListener {
+
 
     LoginContract.LoginPresenter loginPresenter;
 
@@ -117,6 +123,7 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
         initRecyclerView();
         //convertGson();
         //testOkGo();
+
     }
 
     private void initRecyclerView() {
@@ -300,6 +307,26 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
         startActivity(intent);
     }
 
+    public void signIn(View view) {
+        View content_view = LayoutInflater.from(this).inflate(R.layout.bg_dialog, null);
+//        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+//        alertDialog.setView(content_view)
+//                .setCancelable(true);
+//        alertDialog.show();
+        final PopupWindow pop = new PopupWindow(content_view,
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT,
+                true);
+        pop.setBackgroundDrawable(new ColorDrawable(0xffffff));//支持点击Back虚拟键退出
+        pop.showAtLocation(getCurrentFocus(), Gravity.NO_GRAVITY, 0, 0);
+        content_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pop.dismiss();
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -364,6 +391,7 @@ public class MainActivity extends RxAppCompatActivity implements LoginContract.L
         // 事务提交
         transaction.commit();
     }
+
 
     @Override
     public void onTabUnselected(int position) {
